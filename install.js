@@ -9,7 +9,7 @@ db.exec(`
     location TEXT NOT NULL,
     startdate DATE NOT NULL,
     enddate DATE,
-    description TEXT
+    description TEXT DEFAULT 'Ingen beskrivning tillgänglig'
   )
 `);
 

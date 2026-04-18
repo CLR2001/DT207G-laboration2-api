@@ -1,14 +1,19 @@
 import express from 'express';
-import Database from 'better-sqlite3';
 import cors from 'cors';
 import pc from "picocolors";
 
+/* ----------------------------- Initialization ----------------------------- */
 const app = express();
-const db = new Database('employments.db');
+import employmentsRoutes from './routes/employments'
 
+/* ------------------------------- Middleware ------------------------------- */
 app.use(cors());
 app.use(express.json());
 
+/* --------------------------------- Routes --------------------------------- */
+app.use('/employments', employmentsRoutes)
+
+/* --------------------------------- Listen --------------------------------- */
 app.listen(5000, () => {
   setTimeout(() => {
     console.log("\n-------------------------------------------");
@@ -16,9 +21,4 @@ app.listen(5000, () => {
     console.log(`  › ${pc.blue(pc.underline('http://localhost:5000'))}`);
     console.log("-------------------------------------------");
   }, 500);
-});
-
-app.get('/employments', (req, res) => {
-  const employments = db.prepare('SELECT * FROM employments').all();
-  res.json(employments);
 });

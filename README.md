@@ -1,9 +1,9 @@
-# ◈ Laboration
+# ◈ Laboration 2
 Detta repository innehåller 
 
 
 ## ✦ Projektbeskrivning
-Denna webbplats 
+Detta API
 
 ## ⚙ Funktioner
 * **1:**  1
@@ -14,7 +14,7 @@ Denna webbplats
 
 1. **Klona projektet:**
    ```bash
-   git clone https://github.com/CLR2001/DT211G-Projekt.git
+   git clone https://github.com/CLR2001/DT207G-laboration2-api.git
    ```
 2. **Installera beroenden:**
    ```bash
@@ -29,9 +29,6 @@ Denna webbplats
    npm run build
    npm run preview
    ```
-
-## ⬀ Länk till webbplats
-[Webbplats](https://dt211g-projekt.luro2501.workers.dev/)
 
 ## ⬢ Utvecklare
 **Ludvig Rosenqvist** — *Student*
