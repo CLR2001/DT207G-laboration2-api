@@ -2,19 +2,19 @@ import express from 'express';
 import db from '../db';
 const router = express.Router();
 
-router.get('/employments', (req, res) => {
+router.get('/', (req, res) => {
   const employments = db.prepare('SELECT * FROM employments').all();
   res.json(employments);
 });
 
-router.post('/employments', (req, res) => {
+router.post('/', (req, res) => {
   const {companyname, jobtitle, location, startdate, enddate, description } = req.body;
   if (!companyname || !jobtitle || !location || !startdate) {
     return res.status(400).json({ message: 'Fyll i alla obligatoriska fält!' })
   }
 
   const query = db.prepare(`
-    INSERT INTO employment (companyname, jobtitle, location, startdate, enddate, description)
+    INSERT INTO employments (companyname, jobtitle, location, startdate, enddate, description)
     VALUES (?, ?, ?, ?, ?, ?)
     `);
     try {
