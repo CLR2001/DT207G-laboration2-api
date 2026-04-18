@@ -9,11 +9,11 @@ const db = new Database(path);
 db.exec(`
   CREATE TABLE IF NOT EXISTS employments (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    companyname TEXT NOT NULL,
-    jobtitle TEXT NOT NULL,
+    company_name TEXT NOT NULL,
+    job_title TEXT NOT NULL,
     location TEXT NOT NULL,
-    startdate DATE NOT NULL,
-    enddate DATE,
+    start_date DATE NOT NULL,
+    end_date DATE DEFAULT NULL,
     description TEXT DEFAULT 'Ingen beskrivning tillgänglig'
   )
 `);

@@ -14,7 +14,7 @@ app.use(cors({
 app.use(express.json());
 
 /* --------------------------------- Routes --------------------------------- */
-app.use('/employments', employmentsRoutes)
+app.use('/employments', employmentsRoutes);
 
 /* --------------------------------- Listen --------------------------------- */
 const isDev = process.env.NODE_ENV === 'development';
@@ -28,5 +28,3 @@ app.listen(3000, () => {
     console.log("-------------------------------------------");
   }, 500);
 });
-
-
