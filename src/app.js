@@ -9,8 +9,12 @@ import { log } from 'console';
 
 /* ------------------------------- Middleware ------------------------------- */
 app.use(cors({
-  origin: /https?:\/\/(.+\.)?clr-server\.com$/
+  origin: [
+    /https?:\/\/(.+\.)?clr-server\.com$/,
+    /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/
+  ]
 }));
+
 app.use(express.json());
 
 /* --------------------------------- Routes --------------------------------- */
